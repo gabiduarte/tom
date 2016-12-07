@@ -36,7 +36,7 @@ trendOMeterApp.config(function($routeProvider, $translateProvider) {
     $translateProvider.translations('en', {
       //start page
       RESULT_BUTTON: 'Partial results',
-      START_BUTTON: 'start',
+      START_BUTTON: 'START',
       START_SUBTITLE: 'What does the future of your business look like?',
       SLOGAN: 'Innovation and Technology Consulting',
       //duel page
@@ -74,7 +74,7 @@ trendOMeterApp.config(function($routeProvider, $translateProvider) {
     }).translations('pt', {
       //start page
       RESULT_BUTTON: 'Ver o termômetro atualizado',
-      START_BUTTON: 'começar',
+      START_BUTTON: 'COMEÇAR',
       START_SUBTITLE: 'Como será o futuro do seu negócio?',
       SLOGAN: 'Consultoria de Inovação e Tecnologia',
       //duel page

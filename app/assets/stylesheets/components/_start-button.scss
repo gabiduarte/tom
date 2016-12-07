@@ -1,73 +1,22 @@
 @import '../utils/variables',
 		'../components/animations';
 
-.start-button {
-	position: relative;
-	width: $start-button-big;
-	height: $start-button-big;
-	margin: 0 auto;
-	text-align: center;
-	cursor: pointer;
-
-	& .start-button-big {
-		fill: $light-blue;
-	}
-
-	& .start-button-medium {
-		@extend %vertical-align;
-		fill: $medium-blue;
-		width: $start-button-medium;
-	}
-
-	& .start-button-small {
-		@extend %vertical-align;
-		fill: $dark-blue;
-		width: $start-button-small;
-	}
-
-	&-link, &-link:hover {
-		font-size: 1.5rem;
-		font-style: italic;
-		color: $black;
-		cursor: pointer;
-	}
+#start-button-circle {
+  height: 9rem;
+  width: 9rem;
+  background-color: $medium-blue;
+  margin: auto;
+  border-radius: 4.5rem;
 }
 
-
-.start-button {
-	& .start-button-big {
-		-webkit-animation: fillBig 4s infinite ease-in-out alternate, spin_rotate 6s linear infinite;
-		-moz-animation:    fillBig 4s infinite ease-in-out alternate, spin_rotate 6s linear infinite;
-		-o-animation:      fillBig 4s infinite ease-in-out alternate, spin_rotate 6s linear infinite;
-		animation:         fillBig 4s infinite ease-in-out alternate, spin_rotate 6s linear infinite;
-	}
-
-	& .start-button-medium {
-		-webkit-animation: fillMedium 4s infinite ease-in-out alternate, spin_rotate 3s linear infinite;
-	    -moz-animation:    fillMedium 4s infinite ease-in-out alternate, spin_rotate 3s linear infinite;
-	    -o-animation:      fillMedium 4s infinite ease-in-out alternate, spin_rotate 3s linear infinite;
-	    animation:         fillMedium 4s infinite ease-in-out alternate, spin_rotate 3s linear infinite;
-	}
-
-	& .start-button-small {
-		-webkit-animation: fillSmall 4s infinite ease-in-out alternate, spin_rotate 1.5s linear infinite;
-		-moz-animation:    fillSmall 4s infinite ease-in-out alternate, spin_rotate 1.5s linear infinite;
-		-o-animation:      fillSmall 4s infinite ease-in-out alternate, spin_rotate 1.5s linear infinite;
-		animation:         fillSmall 4s infinite ease-in-out alternate, spin_rotate 1.5s linear infinite;
-	}
+#start-button-circle:active {
+  background-color: $light-blue;
 }
 
-@keyframes fillBig {
-    40% { fill: $light-blue; }
-	100% { fill: $yellow; }
-}
-
-@keyframes fillMedium {
-    50% { fill: $medium-blue; }
-	100% { fill: $orange; }
-}
-
-@keyframes fillSmall {
-    60% { fill: $dark-blue; }
-	100% { fill: $red; }
+#start-button-text {
+	font-size: 1.9rem;
+	font-weight: 800;
+  text-align: center;
+  color: $white;
+  padding-top: 3.1rem;
 }
