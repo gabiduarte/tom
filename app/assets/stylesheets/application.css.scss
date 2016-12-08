@@ -16,7 +16,7 @@
  *= require_self
  */
 
-@import "views/home",
+@import "views/*",
 		"components/*",
 		"utils/variables";
 
