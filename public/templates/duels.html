@@ -16,23 +16,45 @@
 <div ng-hide="loading || serverError">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-      <h2 class="title">{{ 'QUESTION1' | translate }}</h2>
-      <h2 class="title">{{ 'QUESTION2' | translate }}</h2>
+      <h2 class="title title-bold">{{ 'QUESTION1' | translate }}</h2>
+      <h2 class="title title-bold">{{ 'QUESTION2' | translate }}</h2>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
       <section class="trends">
 
-        <div class="trend-info trend-info-first">?</div>
-        <div class="trend trend-first"><div class="trend-name">trend1</div></div>
+        <div class="trend-info trend-info-first" ng-class="{'active': currentDuel.first_trend == trendInfo}" ng-click="toggleTrendInfo(currentDuel.first_trend)"></div>
+        <div class="trend trend-first" ng-class="{'loading':saving, 'active': isSelected(currentDuel.first_trend), inactive: isInfoInactive(currentDuel.first_trend) }" ng-click="setWinner(currentDuel.first_trend)">
+          <div class="trend-name">{{ currentDuel.first_trend.name }}</div>
+        </div>
 
-        <div class="trend trend-second"><div class="trend-name">trend2</div></div>
-        <div class="trend-info trend-info-second">?</div>
+        <div class="trend trend-second" ng-class="{'loading':saving, 'active': isSelected(currentDuel.second_trend), inactive: isInfoInactive(currentDuel.second_trend)}" ng-click="setWinner(currentDuel.second_trend)">
+          <div class="trend-name">{{currentDuel.second_trend.name}}</div>
+        </div>
+
+        <div class="trend-info trend-info-second" ng-class="{'active': currentDuel.second_trend == trendInfo}" ng-click="toggleTrendInfo(currentDuel.second_trend)"></div>
 
       </section>
     </div>
   </div>
+
+    <!-- info box -->
+     <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <div class="info">
+                <div class="info-text" ng-show="showTrendInfoBox">
+                    <span class="info-title">{{trendInfo.name}}</span>
+                    <svg class="info-close" ng-click="toggleTrendInfo(trendInfo)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.2 281.5"><circle class="info-close-outer" cx="141.7" cy="142.7" r="124"/><path class="info-close-line" d="M94.6 103.8l86.7 86.7M94.6 190.5l86.7-86.7"/></svg>
+                    <p class="info-description">{{trendInfo.description}}</p>
+                </div>
+               <div class="info-skip text-center">
+                  <a class="btn btn-link btn-skip" ng-click="skip()">{{ 'SKIP_DUEL' | translate }} &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
             <div class="trend-bar">
@@ -43,7 +65,8 @@
             </div>
         </div>
     </div>
-</div>
+  </div>
+
 <div ng-show="loading" class="text-center">
     <div ng-include="'templates/partials/loading.html'"></div>
 </div>

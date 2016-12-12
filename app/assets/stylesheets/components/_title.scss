@@ -1,12 +1,16 @@
+@import "../utils/variables";
+
 .title {
-	font-style: italic;
-	font-size: 1.7rem;
+	font-size: 2rem;
 	padding: 0 1.5rem;
 	text-align: center;
 	margin: 0 0 2rem 0;
+    letter-spacing: $kerning;
+    font-weight: 800;
+    text-transform: uppercase;
 
     & + & {
-        margin-top: -1.75rem;
+        margin-top: -2.5rem;
     }
 
     &-description {

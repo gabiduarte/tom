@@ -103,9 +103,18 @@ trendOMeterApp.controller('DuelsController', function($scope,UserService, DuelSe
         return new Array(size);
     }
 
-    $scope.showTrendInfo = function(isVisible, trend) {
-        $scope.trendInfo = trend;
-        $scope.showTrendInfoBox = isVisible;
+    $scope.toggleTrendInfo = function(trend) {
+        if(trend !== $scope.trendInfo) {
+            $scope.trendInfo = trend;
+            $scope.showTrendInfoBox = true;
+        } else {
+            $scope.trendInfo = null;
+            $scope.showTrendInfoBox = false;
+        }
+    }
+
+    $scope.isInfoInactive = function(trend) {
+        return $scope.trendInfo != trend && $scope.trendInfo;
     }
 
     $scope.init();

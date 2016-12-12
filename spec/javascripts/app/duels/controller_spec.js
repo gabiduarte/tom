@@ -222,7 +222,7 @@ describe('DuelsController', function(){
                 expect(DuelService.setWinner.calls.count()).toEqual(1);
                 expect($scope.saveAction.calls.count()).toEqual(1);
             });
-            
+
             it('should use the currentDuel when calling setWinner service', function() {
                 DuelService.setWinner = function(user_id, duel_id, trend_id) {
                     expect(user_id).toEqual(UserService.getLoggedID());
@@ -242,20 +242,43 @@ describe('DuelsController', function(){
 
             it('should change trendInfo flag depending on parameter', function() {
                 expect($scope.showTrendInfoBox).toBeFalsy();
-                $scope.showTrendInfo(true); 
+                $scope.toggleTrendInfo();
                 expect($scope.showTrendInfoBox).toBeTruthy();
             });
 
             it('should populate only selected trend information inside scope', function() {
-                $scope.showTrendInfo(true, dummyDuel.first_trend);
+                $scope.toggleTrendInfo(dummyDuel.first_trend);
                 expect($scope.trendInfo).toEqual(dummyDuel.first_trend);
+            });
+
+            it('shoild change the trend of the info box', function() {
+                $scope.toggleTrendInfo(dummyDuel.first_trend);
+                expect($scope.showTrendInfoBox).toBeTruthy();
+                expect($scope.trendInfo).toEqual(dummyDuel.first_trend);
+
+                $scope.toggleTrendInfo(dummyDuel.second_trend);
+                expect($scope.showTrendInfoBox).toBeTruthy();
+                expect($scope.trendInfo).toEqual(dummyDuel.second_trend);
+            });
+
+            it('should change inactive status of trend when selecting other trend', function() {
+                expect($scope.isInfoInactive(dummyDuel.first_trend)).toBeFalsy();
+                $scope.toggleTrendInfo(dummyDuel.second_trend);
+                expect($scope.isInfoInactive(dummyDuel.first_trend)).toBeTruthy();
+            });
+
+            it('should remove trend in trendInfo after closing info box', function() {
+                $scope.toggleTrendInfo(dummyDuel.first_trend);
+                expect($scope.trendInfo).toEqual(dummyDuel.first_trend);
+                $scope.toggleTrendInfo(dummyDuel.first_trend);
+                expect($scope.trendInfo).toBeNull();
             });
         });
     });
-    
+ 
     it('should redirect to /start if there is no user_id', function() {
         UserService.unset();
         $controller('DuelsController', {$scope: $scope});
-        expect($location.path()).toEqual('/start');    
+        expect($location.path()).toEqual('/start');
     });
 });
