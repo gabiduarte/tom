@@ -12,6 +12,7 @@ trendOMeterApp.controller('PanelController', function($scope, PanelService, User
     function init() {
         PanelService.getTrends().then(function(response) {
             var data = addPosition(response.data);
+            $scope.trendList = data;
             $scope.trends = {}
             if(response.data.length < 7){
                 $scope.trends.first = data[0];

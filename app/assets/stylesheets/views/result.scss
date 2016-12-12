@@ -6,6 +6,27 @@
     display: flex;
 }
 
+.panel-list {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+
+  & .panel-trend{
+    padding-bottom: 0.25rem;
+
+    & .position {
+      background-color: $red;
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 150rem;
+      text-align: center;
+      line-height: 2.5rem;
+      font-weight: 800;
+      color: $white;
+    }
+  }
+}
 .result-position {
     display: inline-block;
     width: 30%;
