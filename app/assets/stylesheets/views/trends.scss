@@ -29,6 +29,18 @@
         text-align: center;
     }
 
+    &-hot {
+        align-self: center;
+        color: $white;
+        font-size: 5rem;
+        font-weight: 800;
+        letter-spacing: $kerning;
+        text-transform: uppercase;
+        padding: 1rem;
+        text-align: center;
+        font-style: italic;
+    }
+
     &-info {
         background-color: $medium-blue;
         border-radius: 50%;

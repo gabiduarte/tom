@@ -25,12 +25,15 @@
       <section class="trends">
 
         <div class="trend-info trend-info-first" ng-class="{'active': currentDuel.first_trend == trendInfo}" ng-click="toggleTrendInfo(currentDuel.first_trend)"></div>
+
         <div class="trend trend-first" ng-class="{'loading':saving, 'active': isSelected(currentDuel.first_trend), inactive: isInfoInactive(currentDuel.first_trend) }" ng-click="setWinner(currentDuel.first_trend)">
-          <div class="trend-name">{{ currentDuel.first_trend.name }}</div>
+          <div ng-hide="isSelected(currentDuel.first_trend)" class="trend-name">{{ currentDuel.first_trend.name }}</div>
+          <div ng-show="isSelected(currentDuel.first_trend)" class="trend-hot">HOT!</div>
         </div>
 
         <div class="trend trend-second" ng-class="{'loading':saving, 'active': isSelected(currentDuel.second_trend), inactive: isInfoInactive(currentDuel.second_trend)}" ng-click="setWinner(currentDuel.second_trend)">
-          <div class="trend-name">{{currentDuel.second_trend.name}}</div>
+          <div ng-hide="isSelected(currentDuel.second_trend)" class="trend-name">{{currentDuel.second_trend.name}}</div>
+          <div ng-show="isSelected(currentDuel.second_trend)" class="trend-hot">HOT!</div>
         </div>
 
         <div class="trend-info trend-info-second" ng-class="{'active': currentDuel.second_trend == trendInfo}" ng-click="toggleTrendInfo(currentDuel.second_trend)"></div>
