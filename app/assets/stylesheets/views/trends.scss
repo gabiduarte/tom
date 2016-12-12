@@ -51,10 +51,12 @@
 
         &::before {
             content: '?';
+            font-weight: 700;
         }
 
         &.active::before {
             content: 'x';
+            font-weight: 100;
         }
     }
 

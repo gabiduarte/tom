@@ -1,46 +1,39 @@
 @import "../utils/variables";
 
 .trend-bar {
-	margin: 3rem auto;
 	position: relative;
-	width: 12.5rem;
-}
-
-.trend-bar-counter {
-		background-color: $dark-grey;
-		color: $white;
-		width: 3rem;
-		height: 3rem;
-		border-radius: 50%;
-		position: absolute;
-		top: -50%;
-		left: -2.7rem;
-		line-height: 3rem;
-		text-align: center;
-		font-size: 0.75rem;
+    margin-top: 1rem;
 }
 
 .bars {
-	font-size: 0;
-	width: 16rem;
 	height: 1.5rem;
+    text-align: center;
 }
 
 .bar {
-	width: 8.33%;
+    vertical-align: middle;
+    display: inline-block;
+    border-radius: 50%;
+	width: 1.5rem;
 	height: 100%;
-	background-color: $white;
-	display: inline-block;
-	box-sizing: border-box;
-	border: $trend-border-definition;
-	border-left: 0;
+	background-color: $medium-grey;
 	transition: background-color 1s ease;
-	
-	&:first-child {
-		border-left: $trend-border-definition;
-	}
 
+    & + & {
+        margin-left: 0.2rem;
+    }
 	&-completed {
 		background-color: $trend-bar-completed;
 	}
+
+    &-active {
+        width: 3rem;
+        height: 3rem;
+        background-color: $purple;
+        color: white;
+
+        & > span {
+            line-height: 3rem;
+        }
+    }
 }
