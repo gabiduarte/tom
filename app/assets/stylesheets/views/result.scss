@@ -10,9 +10,11 @@
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
+  list-style: none;
+  margin-bottom: 3rem;
 
   & .panel-trend{
-    padding-bottom: 0.25rem;
+    padding-bottom: 0.26rem;
 
     & .position {
       background-color: $red;
@@ -24,6 +26,32 @@
       line-height: 2.5rem;
       font-weight: 800;
       color: $white;
+      margin-right: 0.5rem;
+    }
+    
+    &:nth-child(n+2) .position{
+      background: $orange;
+    }
+    &:nth-child(n+5) .position{
+      background: $yellow;
+    }
+    &:nth-child(n+7) .position{
+      background: $light-green;
+    }
+    &:nth-child(n+10) .position{
+      background: $green;
+    }
+    &:nth-child(n+13) .position{
+      background: $dark-green;
+    }
+    &:nth-child(n+16) .position{
+      background: $light-blue;
+    }
+    &:nth-child(n+18) .position{
+      background: $medium-blue;
+    }
+    &:nth-child(n+21) .position{
+      background: $dark-blue;
     }
   }
 }
@@ -68,9 +96,8 @@
 }
 
 .result-button {
-    background-color: $red;
+    background-color: $black;
     padding: 0.8rem 3.5rem;
-    font-weight: 800;
     color: $white;
     letter-spacing: $kerning;
     cursor: pointer;

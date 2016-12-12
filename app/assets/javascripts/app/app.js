@@ -49,7 +49,7 @@ trendOMeterApp.config(function($routeProvider, $translateProvider) {
       //panel page
       CONGRATULATIONS1: 'Congratulations! These',
       CONGRATULATIONS2: 'are the hottest trends:',
-      RESULTS: 'GET THE RESULTS',
+      RESULTS: 'Get the results',
       VOTE_AGAIN: 'VOTE AGAIN',
       //user page
       CALL_TO_ACTION1: 'Get the results and a detailed',
