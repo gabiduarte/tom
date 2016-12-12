@@ -39,7 +39,7 @@ Industry.create([
   { name: 'Design/Creative Agency' },
   { name: 'Other' }])
 
-Occupation.create([
+Role.create([
   { name: 'Executivo C-Level Executive' },
   { name: 'VP or Director' },
   { name: 'Project Manager' },

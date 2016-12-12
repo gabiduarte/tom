@@ -1,6 +1,6 @@
 # Trend-O-Meter
 
-[![Build Status](https://travis-ci.org/carlosmaniero/tom.svg?branch=master)](https://travis-ci.org/carlosmaniero/tom)
+[![Build Status](https://travis-ci.org/ThoughtWorksInc/tom.svg?branch=master)](https://travis-ci.org/ThoughtWorksInc/tom)
 
 Trend-O-Meter, a.k.a. `TOM`, is a service that allow users to ranking trends according to their perceived hotness.
 
@@ -13,7 +13,7 @@ API and `PostgreSql` database.
 ## Configuration
 
 Create your `db/seeds.rb` file and provide the 
-*occupations*, *industries* and *trends* as you needed. A exemple seeds file
+*roles*, *industries* and *trends* as you needed. A exemple seeds file
 is founded in `db/seeds.db.exemple`.
 
 The application will misbehave in case of an odd number of trends.
