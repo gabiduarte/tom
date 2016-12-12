@@ -52,6 +52,7 @@ trendOMeterApp.controller('DuelsController', function($scope,UserService, DuelSe
 
     $scope.saveAction = function(promise) {
         $scope.saving = true;
+        $scope.trendInfo = null;
         promise.then(function(response) {
             $scope.error = false;
             $scope.getCurrentDuel();
@@ -61,7 +62,7 @@ trendOMeterApp.controller('DuelsController', function($scope,UserService, DuelSe
             $scope.saving = false;
         });
     }
-    
+
     $scope.skip = function() {
         if($scope.saving) return
         $scope.saveAction(
@@ -79,7 +80,7 @@ trendOMeterApp.controller('DuelsController', function($scope,UserService, DuelSe
             $scope.currentDuel.id,
             winnerTrend.id
           )
-        );    
+        );
     }
 
     $scope.setWinner = function(winnerTrend) {
@@ -114,6 +115,7 @@ trendOMeterApp.controller('DuelsController', function($scope,UserService, DuelSe
     }
 
     $scope.isInfoInactive = function(trend) {
+        if ($scope.saving) return false;
         return $scope.trendInfo != trend && $scope.trendInfo;
     }
 

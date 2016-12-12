@@ -267,15 +267,34 @@ describe('DuelsController', function(){
                 expect($scope.isInfoInactive(dummyDuel.first_trend)).toBeTruthy();
             });
 
+            it('should change inactive status when saving', function() {
+                $scope.toggleTrendInfo(dummyDuel.second_trend);
+                expect($scope.isInfoInactive(dummyDuel.first_trend)).toBeTruthy();
+                $scope.saving = true;
+                expect($scope.isInfoInactive(dummyDuel.first_trend)).toBeFalsy();
+            });
+
             it('should remove trend in trendInfo after closing info box', function() {
                 $scope.toggleTrendInfo(dummyDuel.first_trend);
                 expect($scope.trendInfo).toEqual(dummyDuel.first_trend);
                 $scope.toggleTrendInfo(dummyDuel.first_trend);
                 expect($scope.trendInfo).toBeNull();
             });
+
+            it('should remove trendInfo when set a winner for a duel', function() {
+                $scope.toggleTrendInfo(dummyDuel.first_trend);
+                $scope.winner(dummyDuel.first_trend);
+                expect($scope.trendInfo).toBeNull();
+            });
+
+            it('should remove trendInfo when skip a duel', function() {
+                $scope.toggleTrendInfo(dummyDuel.first_trend);
+                $scope.skip();
+                expect($scope.trendInfo).toBeNull();
+            });
         });
     });
- 
+
     it('should redirect to /start if there is no user_id', function() {
         UserService.unset();
         $controller('DuelsController', {$scope: $scope});

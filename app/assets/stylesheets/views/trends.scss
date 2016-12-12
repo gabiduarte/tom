@@ -3,15 +3,15 @@
 .trends {
     display: flex;
     align-content: center;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     color: $white;
 }
 
 .trend {
-    width: 250px;
+    width: 15.625rem;
     background-color: $medium-blue;
-    height: 250px;
+    height: 15.625rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
