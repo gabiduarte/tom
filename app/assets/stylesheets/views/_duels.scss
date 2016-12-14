@@ -1,5 +1,71 @@
 @import '../utils/variables';
 
+.trends {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    color: $white;
+}
+
+.trend {
+    width: 15.625rem;
+    background-color: $medium-blue;
+    height: 15.625rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+
+    &-name, &-hot {
+        align-self: center;
+        color: $white;
+        font-size: 1.3rem;
+        font-weight: 800;
+        letter-spacing: $kerning;
+        text-transform: uppercase;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    &-hot {
+        font-size: 5rem;
+        font-style: italic;
+    }
+
+    &-info {
+        background-color: $medium-blue;
+        border-radius: 50%;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        font-weight: 800;
+        cursor: pointer;
+
+        &::before {
+            content: '?';
+            font-weight: 700;
+        }
+
+        &.active::before {
+            content: 'x';
+            font-weight: 100;
+        }
+    }
+
+    &.loading {
+        background-color: $light-grey;
+    }
+
+    &.active {
+        background-color: $red;
+    }
+
+    &.inactive {
+        background-color: $light-blue;
+    }
+}
+
 .info {
 	position: relative;
 	margin-top: 1rem;
@@ -49,7 +115,7 @@
 		position: absolute;
 		top: 0.5rem;
 		right: 0.5rem;
-		
+
 		&-outer {
 			fill: #999999;
 		}

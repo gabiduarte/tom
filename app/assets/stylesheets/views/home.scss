@@ -1,5 +1,42 @@
 @import '../utils/variables';
 
+.header {
+	text-align: center;
+	margin: 20% auto 10%;
+
+	&-title {
+        border-bottom: 1.5px solid $purple;
+        padding: 0 1rem 0 1rem;
+        font-weight: 800;
+        letter-spacing: $kerning;
+        padding-bottom: 0.4em;
+        font-size: 2.7rem;
+        display: inline-block;
+        margin: 3rem 0 0;
+	}
+
+	&-subtitle {
+		font-weight: 300;
+		font-size: 1.6rem;
+		font-style: italic;
+		margin-top: 1rem;
+		max-width: 19rem;
+		margin: 1rem auto;
+	}
+	&-logo {
+		width: 45%;
+		max-width: 200px;
+		margin-bottom: 1rem;
+
+		&-sub {
+			font-size: 1.2rem;
+			font-weight: 300;
+			color: $dark-grey;
+			margin-top: -0.3rem;
+		}
+	}
+}
+
 .simple {
 	&-container {
 		margin-top: 1.5rem;
@@ -9,4 +46,28 @@
 	&-link, &-link:hover {
 		@extend %simple-link;
 	}
+}
+
+#start-button-circle {
+  height: 9rem;
+  width: 9rem;
+  background-color: $medium-blue;
+  margin: auto;
+  border-radius: 4.5rem;
+  line-height: 9rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+#start-button-circle:active {
+  background-color: $light-blue;
+}
+
+#start-button-text {
+	font-size: 1.8vw;
+	font-weight: 800;
+  color: $white;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
