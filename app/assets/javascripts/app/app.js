@@ -63,7 +63,7 @@ trendOMeterApp.config(function($routeProvider, $translateProvider) {
       SEND: 'SEND',
       BACK: 'Back',
       //thanks page
-      VOTE_AGAIN_BUTTON: 'vote again',
+      VOTE_AGAIN_BUTTON: 'VOTE AGAIN',
       THANKS: 'Soon we\'ll be sending Trend-O-Meter\'s results and detailed analysis.',
       CHECK_TREND_O_METER: 'Check the updated Trend-O-Meter',
       NEW_PARTICIPANT: 'NEW PARTICIPANT',

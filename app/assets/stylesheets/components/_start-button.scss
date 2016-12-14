@@ -7,6 +7,8 @@
   background-color: $medium-blue;
   margin: auto;
   border-radius: 4.5rem;
+  line-height: 9rem;
+  text-align: center;
 }
 
 #start-button-circle:active {
@@ -16,7 +18,8 @@
 #start-button-text {
 	font-size: 1.9rem;
 	font-weight: 800;
-  text-align: center;
   color: $white;
-  padding-top: 3.1rem;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
