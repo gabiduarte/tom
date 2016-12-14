@@ -1,75 +1,81 @@
-<div ng-include="'templates/partials/navbar.html'"></div>
-
-<div ng-include="'templates/partials/error.html'"></div>
-
-<div class="row" ng-show="serverError">
-  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-    <div class="alert alert-danger text-center">
-      <p>{{ 'LOADING_ERROR' | translate }}</p>
-      <a ng-click="init()" class="btn btn-danger">
-        {{ 'LOADING_ERROR_BUTTON' | translate }}
-      </a>{{ 'LOADING_ERROR2' | translate }}
-    </div>
-  </div>
-</div>
-
-<div ng-hide="loading || serverError">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-      <h2 class="title title-bold">{{ 'QUESTION1' | translate }}</h2>
-      <h2 class="title title-bold">{{ 'QUESTION2' | translate }}</h2>
-    </div>
+    <div ng-include="'templates/partials/navbar.html'"></div>
   </div>
+
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-      <section class="trends">
-
-        <div class="trend-info trend-info-first" ng-class="{'active': currentDuel.first_trend == trendInfo}" ng-click="toggleTrendInfo(currentDuel.first_trend)"></div>
-
-        <div class="trend trend-first" ng-class="{'loading':saving, 'active': isSelected(currentDuel.first_trend), inactive: isInfoInactive(currentDuel.first_trend) }" ng-click="setWinner(currentDuel.first_trend)">
-          <div ng-hide="isSelected(currentDuel.first_trend)" class="trend-name">{{ currentDuel.first_trend.name }}</div>
-          <div ng-show="isSelected(currentDuel.first_trend)" class="trend-hot">HOT!</div>
-        </div>
-
-        <div class="trend trend-second" ng-class="{'loading':saving, 'active': isSelected(currentDuel.second_trend), inactive: isInfoInactive(currentDuel.second_trend)}" ng-click="setWinner(currentDuel.second_trend)">
-          <div ng-hide="isSelected(currentDuel.second_trend)" class="trend-name">{{currentDuel.second_trend.name}}</div>
-          <div ng-show="isSelected(currentDuel.second_trend)" class="trend-hot">HOT!</div>
-        </div>
-
-        <div class="trend-info trend-info-second" ng-class="{'active': currentDuel.second_trend == trendInfo}" ng-click="toggleTrendInfo(currentDuel.second_trend)"></div>
-
-      </section>
-    </div>
+    <div ng-include="'templates/partials/error.html'"></div>
   </div>
 
-   <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <div class="info">
-              <div class="info-text" ng-show="showTrendInfoBox">
-                  <span class="info-title">{{trendInfo.name}}</span>
-                  <svg class="info-close" ng-click="toggleTrendInfo(trendInfo)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.2 281.5"><circle class="info-close-outer" cx="141.7" cy="142.7" r="124"/><path class="info-close-line" d="M94.6 103.8l86.7 86.7M94.6 190.5l86.7-86.7"/></svg>
-                  <p class="info-description">{{trendInfo.description}}</p>
-              </div>
-             <div class="info-skip text-center">
-                <a class="btn btn-link btn-skip" ng-click="skip()">{{ 'SKIP_DUEL' | translate }} &raquo;</a>
-              </div>
-          </div>
+  <div class="row" ng-show="serverError">
+    <div class="col-md-12">
+      <div class="alert alert-danger text-center">
+        <p>{{ 'LOADING_ERROR' | translate }}</p>
+        <a ng-click="init()" class="btn btn-danger">
+          {{ 'LOADING_ERROR_BUTTON' | translate }}
+        </a>{{ 'LOADING_ERROR2' | translate }}
       </div>
+    </div>
   </div>
 
-  <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <div class="trend-bar">
-              <div class="bars">
-                <div class="bar"  ng-repeat="i in getDuelCount(totalDuels) track by $index" ng-class="{'bar-completed': $index < getCurrentPage(), 'bar-active': $index == getCurrentPage() -1}">
-                  <span ng-show="$index == getCurrentPage() -1">{{$index + 1}}/11</span>
-                </div>
-              </div>
-          </div>
+  <div ng-hide="loading || serverError">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="title">{{ 'QUESTION1' | translate }}</h2>
+        <h2 class="title">{{ 'QUESTION2' | translate }}</h2>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <section class="trends">
+          <div class="trend-info trend-info-first" ng-class="{'active': currentDuel.first_trend == trendInfo}" ng-click="toggleTrendInfo(currentDuel.first_trend)"></div>
+
+          <div class="trend trend-first" ng-class="{'loading':saving, 'active': isSelected(currentDuel.first_trend), inactive: isInfoInactive(currentDuel.first_trend) }" ng-click="setWinner(currentDuel.first_trend)">
+            <div ng-hide="isSelected(currentDuel.first_trend)" class="trend-name">{{ currentDuel.first_trend.name }}</div>
+            <div ng-show="isSelected(currentDuel.first_trend)" class="trend-hot">HOT!</div>
+          </div>
+
+          <div class="trend trend-second" ng-class="{'loading':saving, 'active': isSelected(currentDuel.second_trend), inactive: isInfoInactive(currentDuel.second_trend)}" ng-click="setWinner(currentDuel.second_trend)">
+            <div ng-hide="isSelected(currentDuel.second_trend)" class="trend-name">{{currentDuel.second_trend.name}}</div>
+            <div ng-show="isSelected(currentDuel.second_trend)" class="trend-hot">HOT!</div>
+          </div>
+
+          <div class="trend-info trend-info-second" ng-class="{'active': currentDuel.second_trend == trendInfo}" ng-click="toggleTrendInfo(currentDuel.second_trend)"></div>
+        </section>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="info">
+          <div class="info-text" ng-show="showTrendInfoBox">
+            <span class="info-title">{{trendInfo.name}}</span>
+            <svg class="info-close" ng-click="toggleTrendInfo(trendInfo)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 279.2 281.5"><circle class="info-close-outer" cx="141.7" cy="142.7" r="124"/><path class="info-close-line" d="M94.6 103.8l86.7 86.7M94.6 190.5l86.7-86.7"/></svg>
+            <p class="info-description">{{trendInfo.description}}</p>
+          </div>
+          <div class="info-skip text-center">
+            <a class="btn btn-link btn-skip" ng-click="skip()">{{ 'SKIP_DUEL' | translate }} &raquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="trend-bar">
+          <div class="bars">
+            <div class="bar"  ng-repeat="i in getDuelCount(totalDuels) track by $index" ng-class="{'bar-completed': $index < getCurrentPage(), 'bar-active': $index == getCurrentPage() -1}">
+              <span ng-show="$index == getCurrentPage() -1">{{$index + 1}}/11</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <div ng-show="loading" class="text-center">
-    <div ng-include="'templates/partials/loading.html'"></div>
+  <div ng-include="'templates/partials/loading.html'"></div>
 </div>
