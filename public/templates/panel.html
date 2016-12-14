@@ -8,12 +8,12 @@
             <h1 class="title">{{ 'CONGRATULATIONS1' | translate }}</h1>
             <h1 class="title">{{ 'CONGRATULATIONS2' | translate }}</h1>
 
-            <ul class="panel-list col-md-10 col-md-offset-2">
-              <li class="panel-trend" ng-repeat="trend in trendList">
+            <div class="panel-list col-md-10 col-md-offset-2">
+              <div class="panel-trend" ng-repeat="trend in trendList">
                 <span class="position">{{ trend.position }}</span>
                 <span class="name">{{ trend.name }}</span>
-              </li>
-            </ul>
+              </div>
+            </div>
 
             <div class="result-button-wrapper">
 	            <button class="result-button" ng-click="users()" ng-show="showUserForm()">
