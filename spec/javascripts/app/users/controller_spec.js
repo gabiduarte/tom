@@ -299,12 +299,12 @@ describe('UserController', function() {
         return promise;
       });
     });
-    it('should validate user name before send data', function() {
+    it('should send data with no name', function() {
       $controller('UserController', {$scope: $scope});
       $scope.user.name = '';
       expect($scope.formErrors).toEqual({});
       $scope.send();
-      expect($scope.formErrors.name).toEqual(true);
+      expect($scope.formErrors.name).toBeFalsy();
     });
     it('should clean user name validation before send data', function() {
       $controller('UserController', {$scope: $scope});
