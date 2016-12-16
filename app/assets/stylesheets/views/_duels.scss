@@ -3,25 +3,32 @@
 .trends {
     display: flex;
     align-content: center;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     color: $white;
 }
 
 .trend {
-    width: 15.625rem;
+    width: $trend-duel-size;
     background-color: $medium-blue;
-    height: 15.625rem;
+    height: $trend-duel-size;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.5s ease;
 
+    & + & {
+        margin-left: 1.5rem;
+    }
+
+    & + &-info, &-info + & {
+        margin: 0 1rem;
+    }
     &-name, &-hot {
         align-self: center;
         color: $white;
-        font-size: 1.3rem;
+        font-size: 2rem;
         font-weight: 800;
         letter-spacing: $kerning;
         text-transform: uppercase;
@@ -30,15 +37,15 @@
     }
 
     &-hot {
-        font-size: 5rem;
+        font-size: 8rem;
         font-style: italic;
     }
 
     &-info {
         background-color: $medium-blue;
         border-radius: 50%;
-        padding: 0.5rem 1rem;
-        font-size: 1.2rem;
+        padding: 0.5rem 1.25rem;
+        font-size: 1.6rem;
         font-weight: 800;
         cursor: pointer;
 
@@ -117,7 +124,7 @@
 		right: 0.5rem;
 
 		&-outer {
-			fill: #999999;
+			fill: $dark-grey;
 		}
 		&-line {
 			fill:none;
@@ -129,9 +136,21 @@
 
 .btn-skip {
 	font-style: italic;
-    font-size: 1rem;
+    font-size: 1.9rem;
 
     &, &:hover {
     	color: $pink;
+    }
+}
+
+@media (max-width: 768px) {
+    .trend {
+       width: $trend-duel-size-mob;
+       height: $trend-duel-size-mob;
+
+    }
+
+    .trend-name {
+        font-size: 1.9rem;
     }
 }
