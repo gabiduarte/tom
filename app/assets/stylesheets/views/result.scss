@@ -13,10 +13,9 @@
 
   & .panel-trend{
     padding-bottom: 0.26rem;
-    margin-top: -4rem;
+    margin-top: 5rem;
     opacity: 0;
-    transition: opacity 600ms linear,
-                margin-top 200ms linear;
+    transition: opacity 600ms ease-in, margin-top 200ms linear;
 
     & .position {
       background-color: $red;
@@ -37,7 +36,7 @@
     }
   }
   & .panel-col { 
-    & .panel-trend {
+    & .panel-trend.show {
       &:nth-child(n+2) .position{
         background: $orange;
       }
@@ -53,7 +52,7 @@
     }
 
     &:last-child {
-      & .panel-trend {
+      & .panel-trend.show {
         & .position{
           background: $green;
         }
