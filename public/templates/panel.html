@@ -10,15 +10,23 @@
 
       <div class="panel-list row">
         <div class="col-md-6 panel-col">
-          <div class="panel-trend" ng-class="{'animate': trend.show}" ng-repeat="trend in leftTrends">
-            <span class="position">{{ trend.position }}</span>
-            <span class="name">{{ trend.name }}</span>
+          <div class="panel-trend" ng-class="{'animate': trend.show, 'no-text': trend.changing}" ng-repeat="trend in leftTrends">
+            <div class="trend-item">
+              <span class="position">{{ trend.position }}</span>
+              <div class="name-wrapper">
+                <span class="name">{{ trend.name }} - {{ trend.count }}</span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-6 panel-col">
-          <div class="panel-trend" ng-class="{'animate': trend.show}" ng-repeat="trend in rightTrends">
-            <span class="position">{{ trend.position }}</span>
-            <span class="name">{{ trend.name }}</span>
+          <div class="panel-trend" ng-class="{'animate': trend.show, 'no-text': trend.changing}" ng-repeat="trend in rightTrends">
+            <div class="trend-item">
+              <span class="position">{{ trend.position }}</span>
+              <div class="name-wrapper">
+                <span class="name">{{ trend.name }} - {{ trend.count }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -30,10 +30,26 @@
       margin-right: 0.5rem;
     }
 
+    & .name-wrapper {
+      display: inline-block;
+      overflow: hidden;
+
+      & .name {
+        transition: margin-left 1000ms ease-in;
+      }
+    }
+
     &.animate {
       margin-bottom: 0;
       padding-top: 0;
       opacity: 1;
+    }
+
+
+    &.no-text {
+      & .name {
+        margin-left: -500px;
+      } 
     }
   }
   & .panel-col { 
