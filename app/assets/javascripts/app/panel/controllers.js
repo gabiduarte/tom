@@ -12,7 +12,7 @@ trendOMeterApp.controller('PanelController', function($scope, PanelService, User
 
       $timeout(function() {
         item['show'] = true;
-      }, 150 * item.position);
+      }, 200 * item.position);
     });
     return array;
   }

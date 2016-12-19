@@ -9,13 +9,13 @@
 .panel-list {
   list-style: none;
   margin-bottom: 3rem;
-  min-height: 400px;
 
   & .panel-trend{
     padding-bottom: 0.26rem;
-    margin-top: 5rem;
+    margin-bottom: -5rem;
+    padding-top: 5rem;
     opacity: 0;
-    transition: opacity 600ms ease-in, margin-top 200ms linear;
+    transition: opacity 600ms ease-in, margin-bottom 200ms linear, padding-top 200ms linear;
 
     & .position {
       background-color: $red;
@@ -30,13 +30,14 @@
       margin-right: 0.5rem;
     }
 
-    &.show {
-      margin-top: 0;
+    &.animate {
+      margin-bottom: 0;
+      padding-top: 0;
       opacity: 1;
     }
   }
   & .panel-col { 
-    & .panel-trend.show {
+    & .panel-trend.animate {
       &:nth-child(n+2) .position{
         background: $orange;
       }
@@ -52,7 +53,7 @@
     }
 
     &:last-child {
-      & .panel-trend.show {
+      & .panel-trend.animate {
         & .position{
           background: $green;
         }

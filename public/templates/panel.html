@@ -10,13 +10,13 @@
 
       <div class="panel-list col-md-10 col-md-offset-2">
         <div class="col-md-6 panel-col">
-          <div class="panel-trend" ng-class="{'show': trend.show}" ng-repeat="trend in leftTrends">
+          <div class="panel-trend" ng-class="{'animate': trend.show}" ng-repeat="trend in leftTrends">
             <span class="position">{{ trend.position }}</span>
             <span class="name">{{ trend.name }}</span>
           </div>
         </div>
         <div class="col-md-6 panel-col">
-          <div class="panel-trend" ng-class="{'show': trend.show}" ng-repeat="trend in rightTrends">
+          <div class="panel-trend" ng-class="{'animate': trend.show}" ng-repeat="trend in rightTrends">
             <span class="position">{{ trend.position }}</span>
             <span class="name">{{ trend.name }}</span>
           </div>
