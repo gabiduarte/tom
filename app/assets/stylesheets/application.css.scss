@@ -27,6 +27,7 @@ html {
 body {
     font-family: $font-family;
     color: $black;
+    overflow-x: hidden;
 }
 
 .col-xs-12 {

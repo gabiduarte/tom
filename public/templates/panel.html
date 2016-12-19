@@ -3,29 +3,37 @@
 <div ng-include="'templates/partials/error.html'"></div>
 
 <div ng-hide="loading">
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-            <h1 class="title">{{ 'CONGRATULATIONS1' | translate }}</h1>
-            <h1 class="title">{{ 'CONGRATULATIONS2' | translate }}</h1>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <h1 class="title">{{ 'CONGRATULATIONS1' | translate }}</h1>
+      <h1 class="title">{{ 'CONGRATULATIONS2' | translate }}</h1>
 
-            <div class="panel-list col-md-10 col-md-offset-2">
-              <div class="panel-trend" ng-repeat="trend in trendList">
-                <span class="position">{{ trend.position }}</span>
-                <span class="name">{{ trend.name }}</span>
-              </div>
-            </div>
-
-            <div class="result-button-wrapper">
-	            <button class="result-button" ng-click="users()" ng-show="showUserForm()">
-                {{ 'RESULTS' | translate }}
-              </button>
-	            <a href="#/duels" class="result-button" ng-hide="showUserForm()">
-                {{ 'VOTE_AGAIN' | translate }}
-              </a>
-            </div>
+      <div class="panel-list col-md-10 col-md-offset-2">
+        <div class="col-md-6 panel-col">
+          <div class="panel-trend" ng-class="{'show': trend.show}" ng-repeat="trend in leftTrends">
+            <span class="position">{{ trend.position }}</span>
+            <span class="name">{{ trend.name }}</span>
+          </div>
         </div>
+        <div class="col-md-6 panel-col">
+          <div class="panel-trend" ng-class="{'show': trend.show}" ng-repeat="trend in rightTrends">
+            <span class="position">{{ trend.position }}</span>
+            <span class="name">{{ trend.name }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-button-wrapper">
+        <button class="result-button" ng-click="users()" ng-show="showUserForm()">
+          {{ 'RESULTS' | translate }}
+        </button>
+        <a href="#/duels" class="result-button" ng-hide="showUserForm()">
+          {{ 'VOTE_AGAIN' | translate }}
+        </a>
+      </div>
     </div>
+  </div>
 </div>
 <div ng-show="loading" class="text-center">
-    <div ng-include="'templates/partials/loading.html'"></div>
+  <div ng-include="'templates/partials/loading.html'"></div>
 </div>

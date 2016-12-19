@@ -1,20 +1,22 @@
 @import "../utils/variables";
 
 .result-line {
-    padding: 2px 0;
-    text-align: center;
-    display: flex;
+  padding: 2px 0;
+  text-align: center;
+  display: flex;
 }
 
 .panel-list {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
   list-style: none;
   margin-bottom: 3rem;
+  min-height: 400px;
 
   & .panel-trend{
     padding-bottom: 0.26rem;
+    margin-top: -4rem;
+    opacity: 0;
+    transition: opacity 600ms linear,
+                margin-top 200ms linear;
 
     & .position {
       background-color: $red;
@@ -28,93 +30,109 @@
       color: $white;
       margin-right: 0.5rem;
     }
-    
-    &:nth-child(n+2) .position{
-      background: $orange;
+
+    &.show {
+      margin-top: 0;
+      opacity: 1;
     }
-    &:nth-child(n+5) .position{
-      background: $yellow;
+  }
+  & .panel-col { 
+    & .panel-trend {
+      &:nth-child(n+2) .position{
+        background: $orange;
+      }
+      &:nth-child(n+5) .position{
+        background: $yellow;
+      }
+      &:nth-child(n+7) .position{
+        background: $light-green;
+      }
+      &:nth-child(n+10) .position{
+        background: $green;
+      }
     }
-    &:nth-child(n+7) .position{
-      background: $light-green;
-    }
-    &:nth-child(n+10) .position{
-      background: $green;
-    }
-    &:nth-child(n+13) .position{
-      background: $dark-green;
-    }
-    &:nth-child(n+16) .position{
-      background: $light-blue;
-    }
-    &:nth-child(n+18) .position{
-      background: $medium-blue;
-    }
-    &:nth-child(n+21) .position{
-      background: $dark-blue;
+
+    &:last-child {
+      & .panel-trend {
+        & .position{
+          background: $green;
+        }
+        &:nth-child(n+2) .position{
+          background: $dark-green;
+        }
+        &:nth-child(n+5) .position{
+          background: $light-blue;
+        }
+        &:nth-child(n+7) .position{
+          background: $medium-blue;
+        }
+        &:nth-child(n+10) .position{
+          background: $dark-blue;
+        }
+      }
     }
   }
 }
 .result-position {
-    display: inline-block;
-    width: 30%;
-    padding: 0.7rem;
-    text-align: right;
+  display: inline-block;
+  width: 30%;
+  padding: 0.7rem;
+  text-align: right;
 
-    &-text {
-        padding-right: 1.2rem;
-        color: $white;
-        font-weight: 800;
-    }
+  &-text {
+    padding-right: 1.2rem;
+    color: $white;
+    font-weight: 800;
+  }
 
-    & + .result-name {
-        margin-left: -4px;
-    }
+  & + .result-name {
+    margin-left: -4px;
+  }
 
-    &-first { background-color: $red; }
-    &-second { background-color: $orange; }
-    &-third { background-color: $yellow; }
-    &-antepenult { background-color: $light-blue; }
-    &-penultimate { background-color: $medium-blue; }
-    &-last { background-color: $dark-blue; }
+  &-first { background-color: $red; }
+  &-second { background-color: $orange; }
+  &-third { background-color: $yellow; }
+  &-antepenult { background-color: $light-blue; }
+  &-penultimate { background-color: $medium-blue; }
+  &-last { background-color: $dark-blue; }
 }
 
 .result-name {
-    display: inline-block;
-    width: 70%;
-    padding: 0.7rem 1.3rem;
-    text-align: left;
+  display: inline-block;
+  width: 70%;
+  padding: 0.7rem 1.3rem;
+  text-align: left;
 }
 
 .result-separator {
-    background-color: $light-grey;
-    font-weight: 700;
-    color: $dark-grey;
-    padding-bottom: 0.5rem;
-    margin: 2px 0;
-    display: block;
+  background-color: $light-grey;
+  font-weight: 700;
+  color: $dark-grey;
+  padding-bottom: 0.5rem;
+  margin: 2px 0;
+  display: block;
 }
 
 .result-button {
-    background-color: $black;
-    padding: 0.8rem 3.5rem;
+  background-color: $black;
+  padding: 0.8rem 3.5rem;
+  color: $white;
+  letter-spacing: $kerning;
+  cursor: pointer;
+  border: 0;
+
+  &:hover {
     color: $white;
-    letter-spacing: $kerning;
-    cursor: pointer;
-    border: 0;
+    text-decoration: none;
+  }
 
-    &:hover {
-        color: $white;
-        text-decoration: none;
-    }
-
-    &-disabled {
-        background-color: $dark-grey;
-    }
-    &-wrapper {
-        margin: 2rem 0;
-        text-align: center;
-    }
+  &-disabled {
+    background-color: $dark-grey;
+  }
+  &-wrapper {
+    margin: 2rem 0;
+    text-align: center;
+  }
 }
 
 

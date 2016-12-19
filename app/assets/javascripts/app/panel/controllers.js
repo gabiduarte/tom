@@ -1,45 +1,43 @@
 trendOMeterApp.controller('PanelController', function($scope, PanelService, UserService, $location, $timeout) {
-    $scope.loading = true; 
+  $scope.loading = true; 
+  $scope.leftTrends = [];
+  $scope.rightTrends = [];
 
-    function addPosition(data){
-        var array = [];
-        data.map(function(item){
-            item['position'] = data.indexOf(item) + 1;
-            array.push(item);
-        });
-        return array;
-    }
-    function init() {
-        PanelService.getTrends().then(function(response) {
-            var data = addPosition(response.data);
-            $scope.trendList = data;
-            $scope.trends = {}
-            if(response.data.length < 7){
-                $scope.trends.first = data[0];
-                $scope.trends.second = data[1];
-                $scope.trends.third = data[2];
-                $scope.trends.antepenult = data[3];
-                $scope.trends.penultimate = data[4];
-                $scope.trends.last = data[5];
-            }else{
-                $scope.trends.first = data[0];
-                $scope.trends.second = data[1];
-                $scope.trends.third = data[2];
-                $scope.trends.antepenult = data[data.length - 3];
-                $scope.trends.penultimate = data[data.length - 2];
-                $scope.trends.last = data[data.length - 1];
-                $scope.trends.split = true;
-            } 
-            $scope.loading = false;
-        });
-    }
+  function addPosition(data){
+    var array = [];
+    data.map(function(item){
+      item['position'] = data.indexOf(item) + 1;
+      item['false'] = true;
+      array.push(item);
 
-    $scope.showUserForm = function() {
-        return !UserService.isCompleted();
-    }
-    $scope.users = function() {
-        $location.path('/user');
-    }
+      $timeout(function() {
+        item['show'] = true;
+      }, 150 * item.position);
+    });
+    return array;
+  }
+  function init() {
+    PanelService.getTrends().then(function(response) {
+      $scope.loading = false;
+      var data = addPosition(response.data);
+      $scope.trendList = data;
+      $scope.totalTrends = $scope.trendList.length;
+      for(var i=0; i < $scope.totalTrends; i++) {
+        if(i < $scope.totalTrends / 2) {
+          $scope.leftTrends.push($scope.trendList[i]);
+        } else {
+          $scope.rightTrends.push($scope.trendList[i]);
+        }
+      }
+    });
+  }
 
-    init();
+  $scope.showUserForm = function() {
+    return !UserService.isCompleted();
+  }
+  $scope.users = function() {
+    $location.path('/user');
+  }
+
+  init();
 });
