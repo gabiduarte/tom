@@ -96,7 +96,7 @@
 
 	&-title {
 		font-weight: 800;
-		font-size: 1rem;
+		font-size: 1.2rem;
 		letter-spacing: $kerning;
 		color: $black;
 		text-transform: uppercase;
@@ -105,7 +105,7 @@
 
 	&-description {
 		font-weight: 300;
-		font-size: 0.9rem;
+		font-size: 1rem;
 		margin-top: 0.5rem;
 	}
 
@@ -140,6 +140,7 @@
 
     &, &:hover {
     	color: $pink;
+        text-decoration: none;
     }
 }
 
@@ -148,6 +149,9 @@
        width: $trend-duel-size-mob;
        height: $trend-duel-size-mob;
 
+       & + & {
+            margin-left: 0;
+        }
     }
 
     .trend-name {
