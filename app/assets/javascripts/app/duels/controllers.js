@@ -86,6 +86,7 @@ trendOMeterApp.controller('DuelsController', function($scope,UserService, DuelSe
     $scope.setWinner = function(winnerTrend) {
         if($scope.saving) return
         $scope.winnerTrend = winnerTrend;
+        $scope.showTrendInfoBox = false;
         $scope.saving = true;
 
         $timeout(function() {
