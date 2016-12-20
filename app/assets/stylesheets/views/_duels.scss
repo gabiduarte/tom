@@ -19,7 +19,7 @@
     transition: background-color 0.5s ease;
 
     & + & {
-        margin-left: 1.5rem;
+        margin-left: 0.35rem;
     }
 
     & + &-info, &-info + & {
@@ -28,7 +28,7 @@
     &-name, &-hot {
         align-self: center;
         color: $white;
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: 800;
         letter-spacing: $kerning;
         text-transform: uppercase;
@@ -37,7 +37,7 @@
     }
 
     &-hot {
-        font-size: 8rem;
+        font-size: 6.5rem;
         font-style: italic;
     }
 
@@ -141,20 +141,5 @@
     &, &:hover {
     	color: $pink;
         text-decoration: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .trend {
-       width: $trend-duel-size-mob;
-       height: $trend-duel-size-mob;
-
-       & + & {
-            margin-left: 0;
-        }
-    }
-
-    .trend-name {
-        font-size: 1.9rem;
     }
 }

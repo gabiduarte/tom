@@ -1,8 +1,8 @@
 @import "../utils/variables";
 
 .title {
-	font-size: 3.3rem;
-    margin-top: 2.75rem;
+	font-size: 2.8rem;
+    margin-top: 2.35rem;
 	text-align: center;
     letter-spacing: $kerning;
     font-weight: 800;
@@ -22,8 +22,3 @@
 
 }
 
-@media (max-width: 768px) {
-    .title {
-        font-size: 2.8rem;
-    }
-}
