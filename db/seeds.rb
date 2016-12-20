@@ -12,15 +12,15 @@
 Trend.create([
   { name: 'Segments of One', description: 'The ability to track and understand individual customer behavior and customize products and services to the individual customer.' },
   { name: 'Artificial Intelligence', description: 'Computers performing tasks that normally require human intelligence: visual perception, decision-making, speech recognition and translation.' },
-  { name: 'Voice-Based Everything - Search, Assistance, Ordering, etc.', description: 'The ability to perform tasks using vocal commands instead of physical input (typing, clicking).' },
-  { name: 'Augmented Reality/Virtual Reality', description: 'Live view of a real-world environment with elements augmented or supplemented by computer-generated sound, video, graphics or GPS data.' },
-  { name: 'Wearables/Wearable Tech', description: 'Technology devices that can be worn by a consumer and often include tracking information related to health and fitness.' },
+  { name: 'Voice-Controlled Everything', description: 'The ability to perform tasks using vocal commands instead of physical input (typing, clicking).' },
+  { name: 'Augmented Reality / Virtual Reality', description: 'Live view of a real-world environment with elements augmented or supplemented by computer-generated sound, video, graphics or GPS data.' },
+  { name: 'Wearables / Wearable Tech', description: 'Technology devices that can be worn by a consumer and often include tracking information related to health and fitness.' },
   { name: 'IoT', description: 'Items connected to the Internet and to each other i.e. cellphones, appliances, lamps, security systems, wearables and consumable products.' },
   { name: 'Seamless Commerce', description: 'Allows customers to purchase and receive goods and services where, when and how they want to, with or without cash, cards or devices.' },
   { name: 'Contextual Customer Understanding', description: 'Understanding and engaging customers as individuals - beyond what, where and how much they buy - it emphasizes a customer’s purpose for buying.' },
   { name: 'Product Insight', description: 'Deeper understanding of a product’s unique information and attributes to help you understand and predict the success or failure of an item.' },
   { name: 'Clienteling', description: 'A technique used by retail associates to nurture relationships with customers based on data about their preferences, behaviors and purchases.' },
-  { name: 'Non-Points/Non-Discount-Based Loyalty Programs', description: 'Loyalty programs that incentivize and reward customer behavior with access to goods, services, experiences or other values-based offerings.' },
+  { name: 'No-Points / No-Discounts Loyalty', description: 'Loyalty programs that incentivize and reward customer behavior with access to goods, services, experiences or other values-based offerings.' },
   { name: 'Click & Collect / BOPIS', description: 'A shopping concept whereby a customer can buy or order goods from a store\'s website and collect them from a nearby pickup location.' },
   { name: 'Death of Apps', description: 'Stagnation in the app market; only 12% of apps are actively used. BUT, Apple’s App Store generated $70B USD. Are apps dead?' },
   { name: 'Virtual Assistant and ChatBots', description: 'Software that simulates live conversation to automate tasks such as customer service inquiries, ordering, getting info. May live inside Facebook messenger.' },
@@ -40,7 +40,7 @@ Industry.create([
   { name: 'Other' }])
 
 Role.create([
-  { name: 'Executivo C-Level Executive' },
+  { name: 'C-Level Executive' },
   { name: 'VP or Director' },
   { name: 'Project Manager' },
   { name: 'Product Manager' },
