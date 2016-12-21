@@ -12,7 +12,7 @@
   </div>
 
   <div class="panel-list row">
-    <div class="col-md-5 col-md-offset-1 panel-col">
+    <div class="col-md-5 col-md-offset-1 panel-col" ng-class="{'col-md-6': tv, 'col-md-offset-3': tv}">
       <div class="panel-trend" ng-class="{'animate': trend.show, 'no-text': trend.changing}" ng-repeat="trend in leftTrends">
         <div class="trend-item">
           <span class="position">{{ trend.position }}</span>
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-5 panel-col">
+    <div class="col-md-5 panel-col" ng-class="{'col-md-6': tv, 'col-md-offset-3': tv}">
       <div class="panel-trend" ng-class="{'animate': trend.show, 'no-text': trend.changing}" ng-repeat="trend in rightTrends">
         <div class="trend-item">
           <span class="position">{{ trend.position }}</span>

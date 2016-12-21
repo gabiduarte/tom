@@ -17,10 +17,12 @@
 
   & .panel-trend{
     padding-bottom: 0.26rem;
-    margin-bottom: -5rem;
-    padding-top: 5rem;
+    margin-bottom: -10rem;
+    padding-top: 10rem;
     opacity: 0;
     transition: opacity 600ms ease-in, margin-bottom 200ms linear, padding-top 200ms linear;
+    font-size: 1.3rem;
+    font-weight: normal;
 
     & .position {
       background-color: $red;
@@ -45,7 +47,7 @@
     }
 
     &.animate {
-      margin-bottom: 0;
+      margin-bottom: 1rem;
       padding-top: 0;
       opacity: 1;
     }
