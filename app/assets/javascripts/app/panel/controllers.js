@@ -2,6 +2,7 @@ trendOMeterApp.controller('PanelController', function($scope, PanelService, User
   $scope.loading = true; 
   $scope.leftTrends = [];
   $scope.rightTrends = [];
+  $scope.tv = false;
 
   function addPosition(data) {
     data.map(function(item) {
@@ -32,6 +33,16 @@ trendOMeterApp.controller('PanelController', function($scope, PanelService, User
     }
   }
 
+  function setUpTv() {
+    $scope.tv = $location.path() === '/panel/tv';
+    if($scope.tv) {
+      document.body.classList.add('tv');
+    }
+    if($scope.tv) {
+      $interval(function() { refresh() }, 5000);
+    }
+  }
+
   function init() {
     PanelService.getTrends().then(function(response) {
       $scope.loading = false;
@@ -42,8 +53,7 @@ trendOMeterApp.controller('PanelController', function($scope, PanelService, User
       distribute(data);
 
       $scope.trendList = data;
-
-      $interval(function() { refresh() }, 5000);
+      setUpTv()
     });
   }
 

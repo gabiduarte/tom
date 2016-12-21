@@ -20,7 +20,7 @@ trendOMeterApp.config(function($routeProvider, $translateProvider) {
             controller: 'UserController',
             templateUrl: '/templates/user.html'
         })
-        .when('/panel', {
+        .when('/panel/:tv?', {
             controller: 'PanelController',
             templateUrl: '/templates/panel.html'
         })

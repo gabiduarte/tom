@@ -54,9 +54,9 @@
   background-color: $medium-blue;
   margin: auto;
   border-radius: 4.5rem;
-  line-height: 9rem;
   text-align: center;
   cursor: pointer;
+  letter-spacing: -0.03em;
 }
 
 #start-button-circle:active {
@@ -64,10 +64,9 @@
 }
 
 #start-button-text {
-	font-size: 1.8vw;
+	font-size: 2rem;
 	font-weight: 800;
   color: $white;
   display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
+  line-height: 9rem;
 }

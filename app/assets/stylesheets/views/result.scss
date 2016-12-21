@@ -1,5 +1,10 @@
 @import "../utils/variables";
 
+.tv {
+  background: $black;
+  color: $white;
+}
+
 .result-line {
   padding: 2px 0;
   text-align: center;
