@@ -35,7 +35,7 @@
   </div>
 
   <div class="result-button-wrapper">
-    <button class="result-button" ng-click="users()" ng-show="showUserForm()" ng-hide="tv">
+    <button class="result-button" ng-click="users()" ng-show="showUserForm()" ng-hide="tv || !showUserForm()">
       {{ 'RESULTS' | translate }}
     </button>
     <a href="#/duels" class="result-button" ng-hide="showUserForm()">
