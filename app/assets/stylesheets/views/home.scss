@@ -2,7 +2,7 @@
 
 .header {
 	text-align: center;
-	margin: 20% auto 10%;
+	margin: 10% auto 10%;
 
 	&-title {
         border-bottom: 1.5px solid $purple;
@@ -49,24 +49,33 @@
 }
 
 #start-button-circle {
-  height: 9rem;
-  width: 9rem;
-  background-color: $medium-blue;
-  margin: auto;
-  border-radius: 4.5rem;
-  text-align: center;
-  cursor: pointer;
-  letter-spacing: -0.03em;
+    height: 9rem;
+    width: 9rem;
+    background-color: $medium-blue;
+    margin: auto;
+    border-radius: 4.5rem;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: -0.03em;
 }
 
 #start-button-circle:active {
-  background-color: $light-blue;
+    background-color: $light-blue;
 }
 
 #start-button-text {
-	font-size: 2rem;
-	font-weight: 800;
-  color: $white;
-  display: inline-block;
-  line-height: 9rem;
+    font-size: 2rem;
+    font-weight: 800;
+    color: $white;
+    display: inline-block;
+    line-height: 9rem;
+}
+
+@media only screen
+       and (min-device-width : 768px)
+       and (max-device-width : 1024px)
+       and (orientation : portrait) {
+    .header {
+        margin-top: 30%;
+    }
 }
