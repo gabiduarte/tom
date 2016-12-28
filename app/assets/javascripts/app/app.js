@@ -48,13 +48,13 @@ trendOMeterApp.config(function($routeProvider, $translateProvider) {
       QUESTION2: 'biggest impact on your business?',
       SKIP_DUEL: 'Skip this duel',
       //panel page
-      CONGRATULATIONS1: 'Congratulations! These are',
+      CONGRATULATIONS1: 'These are',
       CONGRATULATIONS2: 'the hottest trends:',
       RESULTS: 'Get the results',
       VOTE_AGAIN: 'VOTE AGAIN',
       //user page
-      CALL_TO_ACTION1: 'Get the results and a detailed',
-      CALL_TO_ACTION2: 'analysis from RETAIL TREND HOT LIST team:',
+      CALL_TO_ACTION1: 'Get the full results and',
+      CALL_TO_ACTION2: 'a detailed analysis of each trend',
       NAME: 'Name*',
       EMAIL: 'E-mail*',
       COMPANY: 'Company',
@@ -65,7 +65,7 @@ trendOMeterApp.config(function($routeProvider, $translateProvider) {
       BACK: 'Back',
       //thanks page
       VOTE_AGAIN_BUTTON: 'VOTE AGAIN',
-      THANKS: 'Soon we\'ll be sending Retail Trend Hot List\'s results and detailed analysis.',
+      THANKS: 'Soon we\'ll be sending you the Retail Trend Hot List\'s results and detailed analysis.',
       CHECK_TREND_O_METER: 'Check the updated Retail Trend Hot List',
       NEW_PARTICIPANT: 'NEW PARTICIPANT',
       //error partial page

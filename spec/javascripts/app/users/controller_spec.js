@@ -49,12 +49,6 @@ describe('StartController', function() {
       expect($scope.loading).toEqual(false);
     });
    
-    it('should not call createAnonymous when given a cookie before', function() {
-      $cookies.put('user_id', 'hashed==');
-      $scope.start();
-      expect(UserService.createAnonymous.calls.count()).toEqual(0);
-    });
-
     it('should clean completed cookie if is a promoted device', function() {
       UserService.setCompleted();
       $scope.start();
